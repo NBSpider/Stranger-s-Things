@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { updatePost } from '../api';
+import { updatePost, deletePost } from '../api';
+import { Button } from '@mui/material';
 
 const EditPost = ({ posts, token }) => {
   const { postID } = useParams();
@@ -30,37 +31,53 @@ const EditPost = ({ posts, token }) => {
   
   
   return (
-    <form onSubmit={ (ev) => {
+    <form className='editForm' onSubmit={ (ev) => {
       ev.preventDefault();
       editPost();
       
     }}>
-      <input 
+      <input className='editTitle'
         type='text'
         placeholder={title}
         onChange={(ev) => setNewTitle(ev.target.value)}
       />
-      <input 
+    
+      <br></br>
+
+      <input className='editDescription'
         type='text'
         placeholder={description}
         onChange={(ev) => setNewDesc(ev.target.value)}
       />
-      <input 
+
+      <br></br>
+
+      <input className='editLocation'
         type='text'
         placeholder={location}
         onChange={(ev) => setNewLocation(ev.target.value)}
       />
-      <input 
+
+      <br></br>
+
+      <input className='editPrice'
         type='text'
         placeholder={price}
         onChange={(ev) => setNewPrice(ev.target.value)}
       />
-      <input 
+
+      <br></br>
+
+      <input className='newWillDeliver'
         type='checkbox'
         checked={newWillDeliver}
         onChange={(ev) => setNewWillDeliver(ev.target.checked)}
       />
-      <button type='submit'>Edit Post</button>
+      <Button type='submit'>Edit Post</Button>
+      <Button type="submit" onClick={() =>{ 
+      deletePost(token,postID);
+      }}>       
+      Delete</Button>
     </form>
   )
 }

@@ -104,7 +104,7 @@ const App = () => {
         />
         <Route 
           path='/profile' 
-          element={<Profile />} 
+          element={<Profile user={user} />} 
         />
         <Route 
           path='/register' 
@@ -121,12 +121,6 @@ const App = () => {
             navigate={ navigate }
           />}
         />
-        <Route
-        path='/SearchPost'
-        element={ <SearchPost
-          posts={ posts }
-          />
-        }/>
         </Routes>
     </div>
   )

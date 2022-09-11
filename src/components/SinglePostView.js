@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createMessage } from '../api';
+import { Button } from '@mui/material';
 
 const SendMessage = ({ postID, token }) => {
   const [message, setMessage] = useState({content: ''});
@@ -21,7 +22,7 @@ const SendMessage = ({ postID, token }) => {
         placeholder='Enter Message'
         onChange={ (ev) => setMessage({content: ev.target.value}) }
       />
-      <button type='submit'>Send Message</button>
+      <Button type='submit'>Send Message</Button>
     </form>
   )
 }
@@ -44,7 +45,7 @@ const SinglePostView = ({ posts, token }) => {
         <p>Location: {location}</p>
         <p>Will Deliver: {willDeliver}</p>
       </div>
-      <button onClick={() => setActivateMessage(!activateMessage)}>Message this user</button>
+      <Button onClick={() => setActivateMessage(!activateMessage)}>Message this user</Button>
       {
         activateMessage && <SendMessage postID={postID} token={token}/>
       }

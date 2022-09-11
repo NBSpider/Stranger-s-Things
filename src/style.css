@@ -1,0 +1,7 @@
+.navbar{
+    padding: right 20px, left 20px;
+    display: flex;
+    border: 0.3rem;
+    box-shadow: 2px 2px 2px 1px black;
+    background-color: darkgray;
+}

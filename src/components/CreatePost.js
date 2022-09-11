@@ -1,5 +1,6 @@
 import React from 'react';
 import { createPost } from '../api';
+import { Button } from '@mui/material';
 
 const CreatePost = ({ token, fetchPosts, navigate }) => {
   const newPost = {
@@ -18,7 +19,7 @@ const CreatePost = ({ token, fetchPosts, navigate }) => {
   
   return (
     // This needs to be a form that accepts the 5 request parameters for creating a post
-    <button onClick={() => addPost()}>Create a New Post</button>
+    <Button onClick={() => addPost()}>Create a New Post</Button>
   )
 }
 
