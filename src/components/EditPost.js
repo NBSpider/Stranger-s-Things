@@ -36,6 +36,7 @@ const EditPost = ({ posts, token }) => {
       editPost();
       
     }}>
+      
       <input className='editTitle'
         type='text'
         placeholder={title}

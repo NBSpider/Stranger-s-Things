@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
+import { CssBaseline, Container } from '@mui/material';
 import './style.css';
 import {
   Navbar,
@@ -68,6 +69,8 @@ const App = () => {
   
   return (
     <div>
+     <CssBaseline/>
+      <Container>
       <Navbar logout={ logout } token={ token }/>
       <Routes>
         <Route 
@@ -122,6 +125,7 @@ const App = () => {
           />}
         />
         </Routes>
+      </Container>
     </div>
   )
 }

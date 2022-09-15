@@ -1,7 +1,25 @@
+
 .navbar{
-    padding: right 20px, left 20px;
     display: flex;
-    border: 0.3rem;
-    box-shadow: 2px 2px 2px 1px black;
-    background-color: darkgray;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px 1px #515151;
 }
+
+.welcomeHomeBanner{
+    margin: 100px;
+}
+
+.AddaPost{
+    margin: 100px;
+}
+
+.searchedPost{
+    width: max-content;
+    margin-bottom: 1em;  
+    padding: 5px;
+    border: 1px solid #31393C;   
+    border-radius: 2%;
+    background-color: #94CFFF;
+}
+

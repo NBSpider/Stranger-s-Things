@@ -38,6 +38,7 @@ const SinglePostView = ({ posts, token }) => {
   
   return (
     <div>
+     <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
       <div>
         <h3>{title}</h3>
         <p>Description: {description}</p>
@@ -49,6 +50,7 @@ const SinglePostView = ({ posts, token }) => {
       {
         activateMessage && <SendMessage postID={postID} token={token}/>
       }
+     </Paper>
     </div>
   )
 }

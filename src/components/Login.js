@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { loginUser } from '../api';
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 const Login = ({ setToken, navigate }) => {
   const [username, setUsername] = useState('');
@@ -22,17 +22,12 @@ const Login = ({ setToken, navigate }) => {
       event.preventDefault();
       handleSubmit();
     }}>
-      <input className='enterLoginUsername'
-        type='text'
-        placeholder='Enter Username'
+      <TextField className='enterLoginUsername'
+        label='username'
         onChange={(event) => setUsername(event.target.value)}
       />
-
-      <br></br>
-      
-      <input className='enterLoginPassword'
-        type='password'
-        placeholder='Enter Password'
+      <TextField className='enterLoginPassword'
+        label='password'
         onChange={(event) => setPassword(event.target.value)}
       />
       <Button type='submit'>Submit</Button>

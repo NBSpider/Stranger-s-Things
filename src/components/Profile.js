@@ -1,3 +1,4 @@
+import { Paper } from '@mui/material';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
@@ -20,9 +21,11 @@ const Profile = ({ user }) => {
             if (userID !== fromUserID) {
               return (
                 <div key={message._id}>
+                  <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
                   <p className='fromUser'>From User: {username} </p>
                   <p className='Messsage'>Message: {message.content}</p>
                   <p className='postReference'>Post Reference: {title}</p>
+                  </Paper>
                 </div>
               )
             }
@@ -37,6 +40,7 @@ const Profile = ({ user }) => {
             if (userID === fromUser._id) {
               return (
                 <div>
+                  <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
                 <div key={_id}>{content}</div>
                 <p>Message
                   <Link 
@@ -45,8 +49,8 @@ const Profile = ({ user }) => {
                     {post.title}
                   </Link>
                 </p>
+                  </Paper>
                 </div>
-
                 )
             }
           })    

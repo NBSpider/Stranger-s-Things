@@ -24,17 +24,11 @@ const Register = ({ setToken, navigate }) => {
       event.preventDefault();
       handleSubmit();
     }}>
-
-      <br></br>
-
       <input className='newUsername'
         type='text'
         placeholder='Enter Username'
         onChange={(event) => setUsername(event.target.value)}
       />
-
-      <br></br>
-
       <input className='newUserPassword'
         type='password'
         placeholder='Enter Password'

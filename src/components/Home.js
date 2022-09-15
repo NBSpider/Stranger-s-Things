@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import logoIMG from './images/Dumbstockimage.jpg'
 
 const Home = () => {
   return (
     <div>
       <h1 className='welcomeHomeBanner'>Welcome to Stranger's Things!</h1>
-      <Button>
-        <Link to='/posts/create-post'>Add a Post</Link>
-      </Button>
+      <button>
+         <Link to='/posts/create-post'>Add a Post</Link>
+      </button>
+      <img src={logoIMG} style={{backgroundPosistion: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
     </div>
   )
 }

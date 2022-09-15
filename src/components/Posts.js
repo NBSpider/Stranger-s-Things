@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Paper } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -21,36 +21,35 @@ const Posts = ({ posts }) => {
   return (
     <div className='outerDiv' id='outer div element'>
        <div className='searchedPost'>
+         <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
           <form onSubmit={(event) => {
-              event.preventDefault();
+            event.preventDefault();
           }}> 
-            <TextField
-             type = 'text'
-             placeholder = 'Search'
+            <TextField className='searchBar'
+             label='search' style={{width: '100%', margin: '.8rem'}}
              onChange = {(event) => setSearchTerm(event.target.value)}
-            ></TextField>
-            <Button type='Search'>Search</Button>
+             ></TextField>
            </form>  
+            </Paper>
           </div>
     {
       postsToDisplay.map((post) => {
         const {description, location, price, title, _id, isAuthor } = post;
         return (
-          <div className='postHolder' key={_id}>
-            <h3 className='postTitle'>{title}</h3>
-            <p className='postDescription'>Description: {description}</p>
-            <p className='postPrice'>Price: {price}</p>
-            <p className='postLocation'>Location: {location}</p>
-            {
+            <Paper style={{padding: '20px', margin:'20px'}} elevation={7}>
+          <div key={_id}>
+            <h3>{title}</h3>
+            <p>Description: {description}</p>
+            <p>Price: {price}</p>
+            <p>Location: {location}</p>
+            {  
               isAuthor ? (
                 
               
                 
                 
                 <Button>
-                  <p className='isAuthor'>Is Author </p>
-
-                  <br></br>
+                  <p>Is Author </p>
 
                   <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
                   
@@ -63,6 +62,7 @@ const Posts = ({ posts }) => {
               )
             }
           </div>
+          </Paper>
         )
       })
     }
