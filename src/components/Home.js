@@ -6,9 +6,6 @@ const Home = () => {
   return (
     <div>
       <h1 className='welcomeHomeBanner'>Welcome to Stranger's Things!</h1>
-      <button>
-         <Link to='/posts/create-post'>Add a Post</Link>
-      </button>
       <img src={logoIMG} style={{backgroundPosistion: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
     </div>
   )

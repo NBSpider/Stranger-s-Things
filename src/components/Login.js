@@ -18,7 +18,7 @@ const Login = ({ setToken, navigate }) => {
   }
   
   return (
-    <form onSubmit={(event) => {
+    <form className='Login' onSubmit={(event) => {
       event.preventDefault();
       handleSubmit();
     }}>

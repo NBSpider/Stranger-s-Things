@@ -14,12 +14,20 @@
     margin: 100px;
 }
 
-.searchedPost{
-    width: max-content;
-    margin-bottom: 1em;  
-    padding: 5px;
-    border: 1px solid #31393C;   
-    border-radius: 2%;
-    background-color: #94CFFF;
+.editForm{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
 }
 
+.Login{
+display: flex;
+flex-direction: column;
+margin: 1rem;
+}
+
+.Register{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}

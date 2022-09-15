@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { updatePost, deletePost } from '../api';
-import { Button } from '@mui/material';
+import { Button, TextField} from '@mui/material';
 
 const EditPost = ({ posts, token }) => {
   const { postID } = useParams();
@@ -37,39 +37,27 @@ const EditPost = ({ posts, token }) => {
       
     }}>
       
-      <input className='editTitle'
+      <TextField className='editTitle'
         type='text'
         placeholder={title}
         onChange={(ev) => setNewTitle(ev.target.value)}
       />
-    
-      <br></br>
-
-      <input className='editDescription'
+      <TextField className='editDescription'
         type='text'
         placeholder={description}
         onChange={(ev) => setNewDesc(ev.target.value)}
       />
-
-      <br></br>
-
-      <input className='editLocation'
+      <TextField className='editLocation'
         type='text'
         placeholder={location}
         onChange={(ev) => setNewLocation(ev.target.value)}
       />
-
-      <br></br>
-
-      <input className='editPrice'
+      <TextField className='editPrice'
         type='text'
         placeholder={price}
         onChange={(ev) => setNewPrice(ev.target.value)}
       />
-
-      <br></br>
-
-      <input className='newWillDeliver'
+      <TextField className='newWillDeliver'
         type='checkbox'
         checked={newWillDeliver}
         onChange={(ev) => setNewWillDeliver(ev.target.checked)}

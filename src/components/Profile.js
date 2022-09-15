@@ -1,6 +1,7 @@
 import { Paper } from '@mui/material';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import logoIMG from './images/Personalmessages.jpg';
 
 const Profile = ({ user }) => {
   const messages = user.messages;
@@ -21,10 +22,11 @@ const Profile = ({ user }) => {
             if (userID !== fromUserID) {
               return (
                 <div key={message._id}>
-                  <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
-                  <p className='fromUser'>From User: {username} </p>
-                  <p className='Messsage'>Message: {message.content}</p>
-                  <p className='postReference'>Post Reference: {title}</p>
+                   <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
+                  <img src={logoIMG} style={{backgroundPosistion: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '20%', width: '15%'}}/>
+                    <p className='fromUser'>From User: {username} </p>
+                     <p className='Messsage'>Message: {message.content}</p>
+                    <p className='postReference'>Post Reference: {title}</p>
                   </Paper>
                 </div>
               )

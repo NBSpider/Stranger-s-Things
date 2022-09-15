@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createMessage } from '../api';
-import { Button } from '@mui/material';
+import { Button, TextField, Paper } from '@mui/material';
+import logoIMG from './images/Danceman.gif'
 
 const SendMessage = ({ postID, token }) => {
   const [message, setMessage] = useState({content: ''});
@@ -17,7 +18,7 @@ const SendMessage = ({ postID, token }) => {
       ev.preventDefault();
       addMessage();
     }}>
-      <input
+      <TextField
         type='text'
         placeholder='Enter Message'
         onChange={ (ev) => setMessage({content: ev.target.value}) }
@@ -39,6 +40,7 @@ const SinglePostView = ({ posts, token }) => {
   return (
     <div>
      <Paper style={{padding: '20px', margin:'20px'}} elevation={7} >
+      <img src={logoIMG} style={{backgroundPosistion: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
       <div>
         <h3>{title}</h3>
         <p>Description: {description}</p>
@@ -47,10 +49,10 @@ const SinglePostView = ({ posts, token }) => {
         <p>Will Deliver: {willDeliver}</p>
       </div>
       <Button onClick={() => setActivateMessage(!activateMessage)}>Message this user</Button>
+      </Paper>
       {
         activateMessage && <SendMessage postID={postID} token={token}/>
       }
-     </Paper>
     </div>
   )
 }

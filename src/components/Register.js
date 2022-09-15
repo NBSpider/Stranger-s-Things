@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { registerUser } from '../api';
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 const Register = ({ setToken, navigate }) => {
   // props.setToken
@@ -20,23 +20,20 @@ const Register = ({ setToken, navigate }) => {
   }
   
   return (
-    <form onSubmit={(event) => {
+    <form className='Register' onSubmit={(event) => {
       event.preventDefault();
       handleSubmit();
     }}>
-      <input className='newUsername'
+      <TextField className='newUsername'
         type='text'
         placeholder='Enter Username'
         onChange={(event) => setUsername(event.target.value)}
       />
-      <input className='newUserPassword'
+      <TextField className='newUserPassword'
         type='password'
         placeholder='Enter Password'
         onChange={(event) => setPassword(event.target.value)}
       />
-
-      <br></br>
-
       <Button type='submit'>Submit</Button>
     </form>
   )

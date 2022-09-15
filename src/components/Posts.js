@@ -1,6 +1,7 @@
 import { Button, TextField, Paper } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logoIMG from './images/Corndogman.jpg'
 
 const Posts = ({ posts }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -32,11 +33,15 @@ const Posts = ({ posts }) => {
            </form>  
             </Paper>
           </div>
+        <Button varient='outlined'>
+       <Link to='/posts/create-post'>Add a Post</Link>
+      </Button>
     {
       postsToDisplay.map((post) => {
         const {description, location, price, title, _id, isAuthor } = post;
         return (
-            <Paper style={{padding: '20px', margin:'20px'}} elevation={7}>
+          <Paper style={{padding: '20px', margin:'20px'}} elevation={7}>
+              <img src={logoIMG} style={{backgroundPosistion: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
           <div key={_id}>
             <h3>{title}</h3>
             <p>Description: {description}</p>
@@ -48,17 +53,18 @@ const Posts = ({ posts }) => {
               
                 
                 
+                <Link to={`/posts/edit-post/${_id}`}>
                 <Button>
-                  <p>Is Author </p>
-
-                  <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
-                  
+                Edit
                 </Button>
+                </Link>
               ) : (
                 
+                  <Link class="ViewButton" to={`/posts/${_id}` }>
                 <Button>
-                  <Link class="ViewButton" to={`/posts/${_id}` }>View</Link>
+                View
                 </Button>
+                </Link>
               )
             }
           </div>
